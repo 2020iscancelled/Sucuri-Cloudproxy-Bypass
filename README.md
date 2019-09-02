@@ -15,4 +15,4 @@ The script will then return a sucuri cloudproxy cookie dict; you can use it in y
 requests.get(url=mysite, headers=self.headers, cookies=returned_cookie_dict)
 
 Also make sure to be always on the latest version, check your version by calling
-sucuriscr.show_ver()
+sucuriFirewall.show_ver()
