@@ -1,11 +1,15 @@
-# Sucuri-Cloudproxy-Bypass
-5 Minutes script to bypass Sucuri Cloudproxy in Python by using js2py
+# Sucuri-Cloudproxy-Scraper
+Simple python class to bypass Sucuri Firewall...
+As first of all, install the needed packages with pip install requests , pip install bs4 , pip install js2py , pip install base64
 
-Simply install the needed libraries, cd in the directory and run the script with python3 main.py ...
-You can easily integrate this in your projects ecc...
-Might rewrite it as a module that you can simply import at a later point....
+Once done, clone in the repo and copy the sucuriscr.py file in the dir of your project... You can then call the sucuri-scraper function to obtain the cookies like in example.py or with the following function-call:
 
-If they patch anything open an issue and I might fix it
-Don't write me asking how to run this, learn your basics first please
 
-for any other stuff reach me on discord @ pat#6708
+cookies=sucuriFirewall.mainf(self,"https://mypagewithsucuriprotection.com",self.ua) 
+print(cookies) #will give you a cookie dict
+
+
+self.ua is the given useragent or headers dictionary. Sucuri usually disallows various UAs the site access, so make sure to use a UA that is actually allowed to access the page.
+
+The script will then return a sucuri cloudproxy cookie dict; you can use it in your following requests with
+requests.get(url=mysite, headers=self.headers, cookies=returned_cookie_dict)
